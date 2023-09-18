@@ -1,0 +1,250 @@
+.banner {
+	background-attachment: fixed;
+	background-color: #272833;
+	background-image: url('../../public/banner.jpg');
+	background-position: center center;
+	background-size: cover;
+	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+	min-height: 100vh;
+	position: relative;
+	text-align: center;
+	z-index: 21;
+}
+
+.banner:before {
+	content: '';
+	display: inline-block;
+	height: 100vh;
+	vertical-align: middle;
+	width: 1%;
+}
+
+.banner:after {
+	background-image: -moz-linear-gradient(
+			to bottom,
+			rgba(23, 24, 32, 0.95),
+			rgba(23, 24, 32, 0.95)
+		),
+		url('../../public/overlay.png');
+	background-image: -webkit-linear-gradient(
+			to bottom,
+			rgba(23, 24, 32, 0.95),
+			rgba(23, 24, 32, 0.95)
+		),
+		url('../../public/overlay.png');
+	background-image: -ms-linear-gradient(
+			to bottom,
+			rgba(23, 24, 32, 0.95),
+			rgba(23, 24, 32, 0.95)
+		),
+		url('../../public/overlay.png');
+	background-image: linear-gradient(
+			to bottom,
+			rgba(23, 24, 32, 0.95),
+			rgba(23, 24, 32, 0.95)
+		),
+		url('../../public/overlay.png');
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.banner .content {
+	display: inline-block;
+	margin-right: 1%;
+	max-width: 95%;
+	padding: 6em;
+	position: relative;
+	text-align: right;
+	vertical-align: middle;
+	z-index: 1;
+}
+
+.banner .content header {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.banner .content header h2 {
+	font-size: 2.5em;
+	margin: 0;
+}
+
+.banner .content header p {
+	margin: 0.5em 0 0 0;
+	top: 0;
+}
+
+.banner .content .image {
+	border-radius: 100%;
+	display: inline-block;
+	height: 18em;
+	margin-left: 3em;
+	vertical-align: middle;
+	width: 18em;
+}
+
+.banner .content .image img {
+	border-radius: 100%;
+	display: block;
+	width: 100%;
+}
+
+.image {
+	border-radius: 4px;
+	border: 0;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.image:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url('../../public/overlay.png');
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.image img {
+	border-radius: 4px;
+	display: block;
+}
+
+.image.left {
+	float: left;
+	margin: 0 1.5em 1em 0;
+	top: 0.25em;
+}
+
+.image.right {
+	float: right;
+	margin: 0 0 1em 1.5em;
+	top: 0.25em;
+}
+
+.image.left,
+.image.right {
+	max-width: 40%;
+}
+
+.image.left img,
+.image.right img {
+	width: 100%;
+}
+
+.image.fit {
+	display: block;
+	margin: 0 0 2em 0;
+	width: 100%;
+}
+
+.image.fit img {
+	width: 100%;
+}
+
+.goto-next {
+	border: 0;
+	bottom: 0;
+	display: block;
+	height: 5em;
+	left: 50%;
+	margin: 0 0 0 -5em;
+	overflow: hidden;
+	position: absolute;
+	text-indent: 10em;
+	white-space: nowrap;
+	width: 10em;
+	z-index: 1;
+}
+
+.goto-next:before {
+	background-image: url('../../public/arrow.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: '';
+	display: block;
+	height: 1.5em;
+	left: 50%;
+	margin: -0.75em 0 0 -1em;
+	position: absolute;
+	top: 50%;
+	width: 2em;
+	z-index: 1;
+}
+
+@media screen and (max-width: 1280px) {
+	.content {
+		padding: 4.5em;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.banner {
+		background-attachment: scroll;
+	}
+
+	.banner .goto-next {
+		height: 7em;
+	}
+
+	.banner .content {
+		padding: 9em 0;
+		text-align: center;
+	}
+
+	.banner .content header {
+		display: block;
+		margin: 0 0 2em 0;
+		text-align: center;
+	}
+
+	.banner .content .image {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.banner {
+		box-shadow: 0 0.125em 0.5em 0 rgba(0, 0, 0, 0.25);
+		min-height: calc(100vh - 44px);
+	}
+
+	.banner:before {
+		height: calc(100vh - 44px);
+	}
+
+	.banner .content {
+		padding: 4.0625em 1.5em 4.875em 1.5em;
+	}
+
+	.banner .content header h2 {
+		font-size: 1.5em;
+	}
+
+	.banner .content .image {
+		height: 9em;
+		width: 9em;
+	}
+
+	.goto-next:before {
+		height: 0.8em;
+		margin: -0.4em 0 0 -0.6em;
+		width: 1.2em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.banner .content {
+		padding: 3em 1.5625em 5.25em 1.5625em;
+	}
+}
